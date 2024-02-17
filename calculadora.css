@@ -14,17 +14,16 @@
 
     /*Move a div de volta em 50% de sua largura e altura, alinhando-a perfeitamente ao centro.*/
     transform: translate(-50%, -50%);
-    
     display:flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
     background-color: rgb(41, 60, 155);
-    width: 5cm;
-    height: 5cm;
+    width: 80%; /* Alterado para largura relativa */
+    max-width: 300px; /* Limita a largura máxima */
+    height: auto; /* Altura ajustada automaticamente */
     border: #000000;
     border-radius: 5%;
-    border: 2cm;
     padding: 6%;
 }
 
@@ -38,7 +37,7 @@ p{
 }
 
 input[type='text']{
-    width:5cm;
+    width:100%; /* Largura total */
     padding:8px;
     margin-bottom:0.5cm;
     border-radius:5px;
@@ -46,9 +45,9 @@ input[type='text']{
 }
 
 #operacao{
-    width: 5.5cm;
+    width: 100%; /* Largura total */
     border-radius:5px;
-    margin-bottom: 0.cm;
+    margin-bottom: 0.5cm; /* Ajustado para margem uniforme */
     color: #ccc;
     background-color: #000000;
 }
@@ -61,7 +60,7 @@ select option{
 }
 
 #resultado{
-    width:5cm;
+    width:100%; /* Largura total */
     padding:8px;
     margin-bottom:0.7cm;
     border-radius:5px;
@@ -74,4 +73,24 @@ select option{
     color:beige;
     padding: 5px;
     margin: 5px;
+}
+
+/*Aplicação da responsividade*/
+
+@media screen and (max-width: 768px) { /* Mídia query para smartphones */
+    .calculadora {
+        width: 90%; /* Largura relativa ajustada */
+        padding: 4%; /* Padding ajustado */
+    }
+
+    p {
+        font-size: 16px; /* Tamanho da fonte reduzido */
+    }
+
+    input[type='text'],
+    #operacao,
+    #resultado {
+        width:80%;
+        font-size: 14px; /* Tamanho da fonte reduzido */
+    }
 }
